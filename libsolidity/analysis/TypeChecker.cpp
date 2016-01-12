@@ -749,7 +749,7 @@ bool TypeChecker::visit(Conditional const& _conditional)
 
 	TypePointer commonType = Type::commonType(trueType, falseType);
 	if (!commonType)
-		// we fake it as an equal operator, but any other comparison operator can work.
+		// fake it as an equal operator, but any other comparison operator can work.
 		commonType = trueType->binaryOperatorResult(Token::Equal, falseType);
 	if (!commonType)
 	{
